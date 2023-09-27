@@ -1,0 +1,60 @@
+/* main timeline section */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* vertical line spanning the height of the timeline */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #000;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+/* timeline events */
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* circle event marker on vertical line */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  margin-left: -10px;
+}
+
+.timeline-item.left .timeline-content {
+  left: 0;
+}
+
+.timeline-item.right .timeline-content {
+  left: 58%;
+}
+
+.timeline-content {
+  position: relative;
+  left: 30px;
+	width: 300px;
+}
+
+.timeline-name, .timeline-date, .timeline-body {
+  margin-bottom: 10px;
+}
+
+span.role {
+	font-style: italic;
+}

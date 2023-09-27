@@ -1,0 +1,21 @@
+Title
+
+Hi, I'm Natan
+
+Intro
+
+I'm a software developer based in Massachusetts. I pride myself on my
+independent problem-solving skills reinforved by curricular and industry
+software development experience. Currently, I am searching for a full-time
+position that will allow me to exercise these skills in an environment that
+emphasizes collaboration and encourages my personal growth as a software
+developer
+notes: too long, too formal, too limited in scope
+
+Northwestern University
+September 2019 - June 2023
+Bachelor of Science in Computer Science, McCormick School of Engineering
+Kellogg Certificate Program for Undergraduates in Managerial Analytics
+
+Research Assistant | District 65 Research Group
+https://www.educative.io/answers/how-to-create-a-timeline-in-html
