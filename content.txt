@@ -2,7 +2,10 @@ Title
 
 Hi, I'm Natan
 
-Intro
+Hero
+I enjoy building cool stuff and am looking for opportunities to do so while learning from talented people. 
+I believe in the importance of learning by doing and engaging in learning purely for its own sake. This website represents my effort to combine both ideals.
+
 
 I'm a software developer based in Massachusetts. I pride myself on my
 independent problem-solving skills reinforved by curricular and industry

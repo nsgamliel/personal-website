@@ -1,21 +1,29 @@
+body {
+  margin: 0;
+  background-color: #005F73;
+  font-family: Helvetica, Arial, Sans-Serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 /* main timeline section */
 .timeline {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 0 20px 40px 20px; /* not thrilled about this styling choice */
 }
 
 /* vertical line spanning the height of the timeline */
 .timeline::after {
   content: '';
   position: absolute;
-  width: 2px;
-  background-color: #000;
+  width: 8px;
+  background-color: #E9D8A6;
   top: 0;
   bottom: 0;
   left: 50%;
-  margin-left: -1px;
+  margin-left: -4px;
 }
 
 /* timeline events */
@@ -28,13 +36,28 @@
 .timeline-item::after {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #000;
+  width: 30px;
+  height: 30px;
+  background-color: #E9D8A6;
   border-radius: 50%;
   top: 0;
   left: 50%;
-  margin-left: -10px;
+  margin-left: -15px;
+}
+
+.timeline-item.hero {
+  position: relative;
+
+}
+
+.hero {
+  position: relative;
+  top: 220px;
+  padding-right: 50px;
+  color: #E9D8A6;
+  font-size: 64px;
+  width: calc(50% - 50px);
+  text-align: right;
 }
 
 .timeline-item.left .timeline-content {
@@ -49,12 +72,33 @@
   position: relative;
   left: 30px;
 	width: 300px;
+  padding: 8px;
+  padding-bottom: 0;
+  background-color: hsl(190, 100%, 27%);
+  border: 2px solid #E9D8A6;
+  border-radius: 5px;
 }
 
-.timeline-name, .timeline-date, .timeline-body {
+.timeline-content > * {
+  color: #E9D8A6;
+}
+
+.timeline-role, .timeline-name, .timeline-date, .timeline-body {
   margin-bottom: 10px;
 }
 
-span.role {
-	font-style: italic;
+.timeline-chips ul {
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-chips li {
+  display: inline-block; /* inline causes weird overlapping issues, including -block keeps some behavior of block elements */
+  list-style-type: none;
+  padding: 4px 8px;
+  margin: 0 0 4px 0;
+  background: #BB3E03;
+  height: 20px;
+  /* line-height: 24px; */
+  border-radius: 14px;
 }
