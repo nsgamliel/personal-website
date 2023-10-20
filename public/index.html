@@ -3,138 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 	<title>Natan Gamliel</title>
 </head>
 <body>
 
-	<!-- <div style="height: 20vh;"></div> -->
-	<div class="hero">
-		<h1>Hi, I'm<br>Natan</h1>
+	<div id="navbar">
+		<a href=".">>Natan_</a>
 	</div>
-	<div class="timeline">
-		<div class="timeline-item intro right">
-			<div class="timeline-content">
-				<div class="timeline-date"></div>
-				<div class="timeline-body">
-					I am a software engineer with a love for building impactful software alongside other talented people. Currently, I'm searching for the opportunity to pursue this in an environment that will enable me to grow as a developer.
-				</div>
+
+	<div class="terminal">
+		<div class="intro">
+			<div id="disc">
+				<div>Personal Website [Version 0.1.0]</div>
+				<div>(c) Natan Gamliel 2023. All rights reserved.</div>
 			</div>
-		</div>
-		<div class="timeline-item left">
-			<div class="timeline-content">
-				<div class="timeline-date">Sep 2019 - Jun 2023</div>
-				<div class="timeline-role">Student</div>
-				<div class="timeline-name">Northwestern University</div>
-				<div class="timeline-body">
-					Bachelor of Science in Computer Science, McCormick School of Engineering<br>Certificate Program for Undergraduates in Managerial Analytics
-					<!-- <div class="timeline-chips">
-						<ul>
-							<li></li>
-						</ul>
-					</div> -->
-				</div>
-			</div>
-		</div>
-		<div class="timeline-item right">
-			<div class="timeline-content">
-				<div class="timeline-date">Mar 2021 - Jun 2023</div>
-				<div class="timeline-role">Research Assistant</div>
-				<div class="timeline-name">District 65 Research Group</div>
-				<div class="timeline-body">
-					<div class="timeline-chips">
-						<ul>
-							<li>Python</li>
-							<li>Flask</li>
-							<li>HTML</li>
-							<li>CSS</li>
-							<li>JavaScript</li>
-							<li>Mapbox GL</li>
-							<li>GitHub</li>
-						</ul>
+			<div class="io-chunk">
+				<h1 id="intro-phrase">>_</h1>
+				<div class="o-chunk">
+					<p id="intro-blurb">I am a software engineer with a love for building impactful software alongside other talented people. Currently, I'm searching for the opportunity to pursue this in an environment that will enable me to grow as a developer.</p>
+					<p id="more">More about my qualifications:</p>
+					<div class="more-options current">
+						<div class="intro-option edu" onclick="addEducation()"><span class="intro-doc">&lt;DOC></span>&nbsp; education</div>
+						<div class="intro-option exp" onclick="addExperience()"><span class="intro-dir">&lt;DIR></span>&nbsp; experience</div>
+						<div class="intro-option cont" onclick="addContact()"><span class="intro-exe">&lt;EXE></span>&nbsp; get_in_touch</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="timeline-item left">
-			<div class="timeline-content">
-				<div class="timeline-date">Nov 2021 - Feb 2023</div>
-				<div class="timeline-role">Chief Technical Officer</div>
-				<div class="timeline-name">Student Holdings</div>
-				<div class="timeline-body">
-					<div class="timeline-chips">
-						<ul>
-							<li>React</li>
-							<li>Firebase</li>
-							<li>GitHub</li>
-							<li>Project management</li>
-							<li>Squarespace</li>
-							<li>Zapier</li>
-							<li>Google Admin</li>
-							<li>Student startup</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="timeline-item right">
-			<div class="timeline-content">
-				<div class="timeline-date">Jun 2022 - Aug 2022</div>
-				<div class="timeline-role">Intern</div>
-				<div class="timeline-name">Publicis Sapient</div>
-				<div class="timeline-body">
-					<div class="timeline-chips">
-						<ul>
-							<li>Spring Boot</li>
-							<li>Java</li>
-							<li>React</li>
-							<li>Jira</li>
-							<li>Azure</li>
-							<li>Agile methodology</li>
-							<li>GitHub</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="timeline-item left">
-			<div class="timeline-content">
-				<div class="timeline-date">Jun 2021 - Aug 2021</div>
-				<div class="timeline-role">Intern</div>
-				<div class="timeline-name">Robotic Perception</div>
-				<div class="timeline-body">
-					<div class="timeline-chips">
-						<ul>
-							<li>Jupyter Notebook</li>
-							<li>Computer Vision</li>
-							<li>Machine Learning</li>
-							<li>Startup</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="timeline-item right">
-			<div class="timeline-content">
-				<div class="timeline-date">Nov 2019 - Sep 2020</div>
-				<div class="timeline-role">Software Engineer</div>
-				<div class="timeline-name">Scope</div>
-				<div class="timeline-body">
-					<div class="timeline-chips">
-						<ul>
-							<li>Google Maps Platform</li>
-							<li>Firebase</li>
-							<li>HTML</li>
-							<li>JavaScript</li>
-							<li>CSS</li>
-							<li>Project management</li>
-							<li>Student startup</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+	
+		<div class="feed"></div>
+
+		<div style="height: 80vh;"></div>
+
 	</div>
+
+	
+	
+
+	
 	
 	<script src="script.js"></script>
 </body>
