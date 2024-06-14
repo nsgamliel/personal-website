@@ -36,23 +36,27 @@ body * {
   font-size: 48px;
 }
 
-.intro-doc {
+.intro-opt-marker {
   color: #f0f;
 }
 
-.intro-dir {
+.intro-edu {
+  color: #f0f;
+}
+
+.intro-exp {
   color: #ff0;
 }
 
-.intro-exe {
+.intro-cont {
   color: #0ff;
 }
 
-a.intro-exe {
+a.intro-cont {
   text-decoration: none;
 }
 
-a.intro-exe:hover {
+a.intro-cont:hover {
   color: #000;
   background-color: #0ff;
   transition: 0.3s;
@@ -111,5 +115,27 @@ a.intro-exe:hover {
   text-decoration: none;
   font-size: 2em;
   font-weight: bold;
-  
+}
+
+#headshot-blurb {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#headshot {
+  margin-right: 20px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) and (orientation:portrait) {
+  #headshot-blurb {
+    flex-direction: column;
+  }
+  #headshot {
+    max-width: 200px;
+    margin: 0;
+  }
 }

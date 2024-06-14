@@ -29,14 +29,13 @@ const typeIntro = async () => {
 	}
 
 	blink();
-	await new Promise(resolve => setInterval(resolve, 200));
+	// await new Promise(resolve => setInterval(resolve, 200));
 
 	const elem = document.querySelector('.o-chunk');
 	elem.classList.add('fade-in');
-
 };
 
-const typeById = async (id, text) => {
+const typeMessageById = async (id, text) => {
 	const elems = document.querySelectorAll(id);
 	const elem = elems[elems.length-1];
 
@@ -45,6 +44,38 @@ const typeById = async (id, text) => {
 		await new Promise(resolve => setInterval(resolve, 50));
 	}
 	elem.innerHTML = elem.innerHTML.slice(0,-1);
+};
+
+const handleOptMouseEnter = (event) => {
+	const text = event.target.innerHTML;
+	event.target.innerHTML = `[*]${text.substring(3,text.length)}`;
+};
+
+const handleOptMouseLeave = (event) => {
+	const elemClasses = event.target.classList;
+	if (elemClasses.contains('edu')) {
+		event.target.innerHTML = '[ ]&nbsp; education';
+	} else if (elemClasses.contains('exp')) {
+		event.target.innerHTML = '[ ]&nbsp; experience';
+	} else if (elemClasses.contains('cont')) {
+		event.target.innerHTML = '[ ]&nbsp; contact';
+	}
+};
+
+const addIntroOptListeners = () => {
+	const currentOptions = document.querySelector('.more-options.current');
+	const introOptions = currentOptions.querySelectorAll('.intro-option');
+
+	introOptions.forEach((elem) => {
+		elem.addEventListener(
+			'mouseenter',
+			handleOptMouseEnter
+		);
+		elem.addEventListener(
+			'mouseleave',
+			handleOptMouseLeave
+		);
+	});
 };
 
 const addEducation = async () => {
@@ -56,11 +87,17 @@ const addEducation = async () => {
 	const prev = document.querySelector('.more-options.current');
 	prev.classList.remove('current');
 	const clicked = prev.querySelector('.intro-option.edu');
+	clicked.removeEventListener('mouseenter', handleOptMouseEnter);
+	clicked.removeEventListener('mouseleave', handleOptMouseLeave);
+	const text = clicked.innerHTML;
+	clicked.innerHTML = `[*]${text.substring(3,text.length)}`;
 	clicked.classList.remove('intro-option');
 	clicked.classList.add('option-clicked');
 	clicked.removeAttribute('onclick');
 	const sibs = prev.querySelectorAll('.intro-option');
 	for (const sib of sibs) {
+		sib.removeEventListener('mouseenter', handleOptMouseEnter);
+		sib.removeEventListener('mouseleave', handleOptMouseLeave);
 		sib.classList.remove('intro-option');
 		sib.classList.add('clicked-sibling');
 		sib.removeAttribute('onclick');
@@ -73,16 +110,16 @@ const addEducation = async () => {
 	prompt.innerHTML = '>';
 	feed.appendChild(prompt);
 	const offset = prompt.getBoundingClientRect().top - 68 + window.scrollY;
-	await typeById('.edu', ' education');
+	await typeMessageById('.edu', ' education');
 
 	chunk.innerHTML = `
 		<p>Northwestern University | Evanston, IL</p>
-		<p>- Bachelor of Science in <span class="intro-doc">Computer Science</span>, McCormick School of Engineering<br>- Certificate Program for Undergraduates in <span class="intro-doc">Managerial Analytics</span></p>
+		<p>- Bachelor of Science in <span class="intro-edu">Computer Science</span>, McCormick School of Engineering<br>- Certificate Program for Undergraduates in <span class="intro-edu">Managerial Analytics</span></p>
 		
 		<div class="more-options current">
-			<div class="intro-option edu" onclick="addEducation()"><span class="intro-doc">&lt;DOC></span>&nbsp; education</div>
-			<div class="intro-option exp" onclick="addExperience()"><span class="intro-dir">&lt;DIR></span>&nbsp; experience</div>
-			<div class="intro-option cont" onclick="addContact()"><span class="intro-exe">&lt;EXE></span>&nbsp; get_in_touch</div>
+			<div class="intro-option edu" onclick="addEducation()">[ ]&nbsp; education</div>
+			<div class="intro-option exp" onclick="addExperience()">[ ]&nbsp; experience</div>
+			<div class="intro-option cont" onclick="addContact()">[ ]&nbsp; get_in_touch</div>
 		</div>
 	`;
 	feed.appendChild(chunk);
@@ -91,6 +128,7 @@ const addEducation = async () => {
 		left: 0,
 		behavior: 'smooth'
 	});
+	addIntroOptListeners();
 };
 
 const addExperience = async () => {
@@ -145,11 +183,17 @@ const addExperience = async () => {
 	const prev = document.querySelector('.more-options.current');
 	prev.classList.remove('current');
 	const clicked = prev.querySelector('.intro-option.exp');
+	clicked.removeEventListener('mouseenter', handleOptMouseEnter);
+	clicked.removeEventListener('mouseleave', handleOptMouseLeave);
+	const text = clicked.innerHTML;
+	clicked.innerHTML = `[*]${text.substring(3,text.length)}`;
 	clicked.classList.remove('intro-option');
 	clicked.classList.add('option-clicked');
 	clicked.removeAttribute('onclick');
 	const sibs = prev.querySelectorAll('.intro-option');
 	for (const sib of sibs) {
+		sib.removeEventListener('mouseenter', handleOptMouseEnter);
+		sib.removeEventListener('mouseleave', handleOptMouseLeave);
 		sib.classList.remove('intro-option');
 		sib.classList.add('clicked-sibling');
 		sib.removeAttribute('onclick');
@@ -162,23 +206,23 @@ const addExperience = async () => {
 	prompt.innerHTML = '>';
 	feed.appendChild(prompt);
 	const offset = prompt.getBoundingClientRect().top - 68 + window.scrollY;
-	await typeById('.exp', ' experience');
+	await typeMessageById('.exp', ' experience');
 
 	chunk.innerHTML = '';
 	for (const exp of exps) {
 		chunk.innerHTML += `
 			<div class="exp-item">
 				<p><strong>${exp.role}</strong> @ ${exp.firm}<br>${exp.date}</p>
-				<p class="exp-tags">${exp.tags.map((tag) => `<span class="intro-dir">!</span>${tag}`).join(' ')}</p>
+				<p class="exp-tags">${exp.tags.map((tag) => `<span class="intro-exp">!</span>${tag}`).join(' ')}</p>
 			</div>
 		`;
 	}
 
 	chunk.innerHTML += `
 		<div class="more-options current">
-			<div class="intro-option edu" onclick="addEducation()"><span class="intro-doc">&lt;DOC></span>&nbsp; education</div>
-			<div class="intro-option exp" onclick="addExperience()"><span class="intro-dir">&lt;DIR></span>&nbsp; experience</div>
-			<div class="intro-option cont" onclick="addContact()"><span class="intro-exe">&lt;EXE></span>&nbsp; get_in_touch</div>
+			<div class="intro-option edu" onclick="addEducation()">[ ]&nbsp; education</div>
+			<div class="intro-option exp" onclick="addExperience()">[ ]&nbsp; experience</div>
+			<div class="intro-option cont" onclick="addContact()">[ ]&nbsp; get_in_touch</div>
 		</div>
 	`;
 	feed.appendChild(chunk);
@@ -187,6 +231,7 @@ const addExperience = async () => {
 		left: 0,
 		behavior: 'smooth'
 	});
+	addIntroOptListeners();
 };
 
 const addContact = async () => {
@@ -198,11 +243,17 @@ const addContact = async () => {
 	const prev = document.querySelector('.more-options.current');
 	prev.classList.remove('current');
 	const clicked = prev.querySelector('.intro-option.cont');
+	clicked.removeEventListener('mouseenter', handleOptMouseEnter);
+	clicked.removeEventListener('mouseleave', handleOptMouseLeave);
+	const text = clicked.innerHTML;
+	clicked.innerHTML = `[*]${text.substring(3,text.length)}`;
 	clicked.classList.remove('intro-option');
 	clicked.classList.add('option-clicked');
 	clicked.removeAttribute('onclick');
 	const sibs = prev.querySelectorAll('.intro-option');
 	for (const sib of sibs) {
+		sib.removeEventListener('mouseenter', handleOptMouseEnter);
+		sib.removeEventListener('mouseleave', handleOptMouseLeave);
 		sib.classList.remove('intro-option');
 		sib.classList.add('clicked-sibling');
 		sib.removeAttribute('onclick');
@@ -215,15 +266,15 @@ const addContact = async () => {
 	prompt.innerHTML = '>';
 	feed.appendChild(prompt);
 	const offset = prompt.getBoundingClientRect().top - 68 + window.scrollY;
-	await typeById('.cont', ' get_in_touch');
+	await typeMessageById('.cont', ' get_in_touch');
 
 
 	chunk.innerHTML = `
-		<p>Feel free to reach out over email (<span class="intro-exe">gamlielnatan at gmail dot com</span>) or <a class="intro-exe" href="https://www.linkedin.com/in/natan-gamliel/" target="_blank">connect with me via linkedin</a>. I look forward to hearing from you!</p>
+		<p>Feel free to reach out over email (<span class="intro-cont">gamlielnatan at gmail dot com</span>) or <a class="intro-cont" href="https://www.linkedin.com/in/natan-gamliel/" target="_blank">connect with me via linkedin</a>.</p>
 		<div class="more-options current">
-			<div class="intro-option edu" onclick="addEducation()"><span class="intro-doc">&lt;DOC></span>&nbsp; education</div>
-			<div class="intro-option exp" onclick="addExperience()"><span class="intro-dir">&lt;DIR></span>&nbsp; experience</div>
-			<div class="intro-option cont" onclick="addContact()"><span class="intro-exe">&lt;EXE></span>&nbsp; get_in_touch</div>
+			<div class="intro-option edu" onclick="addEducation()">[ ]&nbsp; education</div>
+			<div class="intro-option exp" onclick="addExperience()">[ ]&nbsp; experience</div>
+			<div class="intro-option cont" onclick="addContact()">[ ]&nbsp; get_in_touch</div>
 		</div>
 	`;
 	feed.appendChild(chunk);
@@ -232,12 +283,14 @@ const addContact = async () => {
 		left: 0,
 		behavior: 'smooth'
 	});
+	addIntroOptListeners();
 };
 
 
 window.onload = (event) => {
 	console.log('page fully loaded.');
 	typeIntro();
+	addIntroOptListeners();
 };
 
 window.onscroll = (event) => {
