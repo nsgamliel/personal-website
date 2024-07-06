@@ -7,6 +7,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="images/favicon.png" type="image/png">
 	<title>Natan Gamliel</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
 		<div class="intro">
 			<div id="disc">
 				<div>Personal Website [Version 0.1.3]</div>
-				<!-- <a href="/second">link</a> -->
+				<!-- <a href="pdfs/GamlielNatanResume_2024.5.pdf">link</a> -->
 				<div>(c) Natan Gamliel 2023. All rights reserved.</div>
 			</div>
 			<div class="io-chunk">
@@ -30,17 +31,20 @@
 						<p id="intro-blurb">I'm a software engineer with a love for building impactful software alongside other talented people. Currently, I'm searching for the opportunity to pursue this in an environment that will enable me to grow as a developer.</p>
 					</div>
 					
-					<p id="more">More about my qualifications:</p>
-					<div class="more-options current">
-						<div class="intro-option edu" onclick="addEducation()">[ ]&nbsp; education</div>
-						<div class="intro-option exp" onclick="addExperience()">[ ]&nbsp; experience</div>
-						<div class="intro-option cont" onclick="addContact()">[ ]&nbsp; get_in_touch</div>
+					<p id="more">More about what I've been up to:</p>
+					<div class="more-options">
+						<div class="intro-option exp">[ ]&nbsp; experience</div>
+						<div class="intro-option edu">[ ]&nbsp; education</div>
+						<div class="intro-option cont">[ ]&nbsp; contact</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	
-		<div class="feed"></div>
+		<div class="output o-chunk">
+			<p class="prompt blink">></p>
+			<div class="chunk o-chunk fade-in"></div>
+		</div>
 
 		<div style="height: 80vh;"></div>
 
@@ -50,7 +54,7 @@
 	
 
 	
-	
-	<script src="script.js"></script>
+	<script type="module" src="content.js"></script>
+	<script type="module" src="script.js"></script>
 </body>
 </html>
