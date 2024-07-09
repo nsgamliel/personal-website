@@ -14,7 +14,7 @@ const content = {
 			</div>
 			<div class="exp-item">
 				<p><strong>Project Coordinator</strong> @ Massachusetts Bay Transit Authority<br>April 2024 - Present</p>
-				<p class="exp-tags"><span class="intro-exp">!</span>Project_management <span class="intro-exp">!</span>Asana</p>
+				<p class="exp-tags"><span class="intro-exp">!</span>Project_management <span class="intro-exp">!</span>Asana</p> <span class="intro-exp">!</span>Excel</p>
 			</div>
 			<div class="exp-item">
 				<p><strong>Research Assistant</strong> @ District 65 Research Group<br>March 2021 - June 2023</p>
