@@ -70,10 +70,15 @@ const addContent = async (key) => {
 
 	chunk.innerHTML = '';
 	prompt.innerHTML = '>';
-	await typePrompt(` ${content[key]['full']}`);
+	await typePrompt(` ${content[key].full}`);
 	prompt.classList.remove('blink');
 
-	chunk.innerHTML = content[key]['chunk'];
+	if (content[key].generator) {
+		chunk.innerHTML = content[key].generatorFcn(content[key].data);
+	} else {
+		chunk.innerHTML = content[key].chunk;
+	}
+	
 };
 
 
