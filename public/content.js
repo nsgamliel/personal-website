@@ -57,7 +57,7 @@ const content = {
 		generatorFcn: (data) => {
 			var htmlStr = `
 				<div style="margin-bottom: 1em;">
-					<a class="intro-exp" href="pdfs/GamlielNatanResume_2024.5.pdf" target="_blank">View my full resume</a>
+					<a class="intro-exp" href="pdfs/GamlielNatanResume_2024.7.pdf" target="_blank">View my full resume</a>
 				</div>
 			`;
 			
