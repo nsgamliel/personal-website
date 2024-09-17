@@ -4,7 +4,7 @@ const content = {
 		generator: false,
 		chunk: `
 			<p>Northwestern University | Evanston, IL</p>
-			<p>Bachelor of Science in <a href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/bachelors/#bs-in-cs" class="intro-edu" target="_blank">Computer Science</a>, McCormick School of Engineering<br>Certificate Program for Undergraduates in <a href="https://www.kellogg.northwestern.edu/programs/certificate/academics/managerial-analytics-certificate.aspx" class="intro-edu" target="_blank">Managerial Analytics</a></p>
+			<p>Bachelor of Science in <a href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/bachelors/#bs-in-cs" class="intro-edu" target="_blank" rel="noopener noreferrer">Computer Science</a>, McCormick School of Engineering<br>Certificate Program for Undergraduates in <a href="https://www.kellogg.northwestern.edu/programs/certificate/academics/managerial-analytics-certificate.aspx" class="intro-edu" target="_blank" rel="noopener noreferrer">Managerial Analytics</a></p>
 		`,
 	},
 	'exp': {
@@ -37,7 +37,7 @@ const content = {
 				firm: 'Publicis Sapient',
 				start: 'June 2022',
 				end: 'August 2022',
-				tags: ['Spring_Boot', 'Java', 'Microsoft_Azure', 'React', 'Jira', 'Agile_methodology', 'GitHub']
+				tags: ['Spring_Boot', 'Java', 'REST API', 'Microsoft_Azure', 'React', 'Jira', 'Agile_methodology', 'GitHub']
 			},
 			{
 				title: 'Intern',
@@ -57,7 +57,7 @@ const content = {
 		generatorFcn: (data) => {
 			var htmlStr = `
 				<div style="margin-bottom: 1em;">
-					<a class="intro-exp" href="pdfs/GamlielNatanResume_2024.7.pdf" target="_blank">View my full resume</a>
+					<a class="intro-exp" href="pdfs/GamlielNatanResume_2024.8.pdf" target="_blank">View my full resume</a>
 				</div>
 			`;
 			
@@ -76,11 +76,50 @@ const content = {
 			return htmlStr;
 		}
 	},
+	'proj': {
+		full: 'projects',
+		generator: true,
+		data: [
+			{
+				title: 'Personal Website',
+				id: 'project-website',
+				img: 'personal-website.png',
+				link: 'https://natangamliel.com',
+				code: 'https://github.com/nsgamliel/personal-website',
+				descr: 'Personal website to showcase my education, experience and projects',
+				tags: ['HTML', 'JavaScript', 'CSS', 'Firebase', 'Cloudflare']
+			},
+		],
+		generatorFcn: (data) => {
+			var htmlStr = `
+				<p>View all project code on my <a class="intro-cont" href="https://github.com/nsgamliel" target="_blank" rel="noopener noreferrer">GitHub profile</a></p>
+				<div class="proj-list">
+			`;
+			
+			data.forEach((elem) => {
+				var container = `
+					<div class="project">
+						<img class="proj-img" id="${elem.id}" src="images/${elem.img}" alt="A screenshot of ${elem.title}">
+						<div class="proj-details">
+							<p class="proj-title"><strong>${elem.title}</strong></p>
+							<p class="proj-links"><a class="proj-link" href="${elem.link}" target="_blank" rel="noopener noreferrer">[link]</a> <a class="proj-link" href="${elem.code}" target="_blank" rel="noopener noreferrer">[code]</a></p>
+							<p class="proj-descr">${elem.descr}</p>
+							<p class="proj-tags">
+				`;
+				elem.tags.forEach((tag) => {
+					container += `<span class="intro-exp">!</span>${tag} `;
+				});
+				container += '</p></div></div></div>';
+				htmlStr += container;
+			});
+			return htmlStr;
+		}
+	},
 	'cont': {
 		full: 'contact',
 		generator: false,
 		chunk: `
-			<p>Feel free to reach out over email (<span class="intro-cont">nsgamliel [at] gmail [dot] com</span>) or <a class="intro-cont" href="https://www.linkedin.com/in/natan-gamliel/" target="_blank">connect with me via linkedin</a>.</p>
+			<p>Feel free to reach out over email (<span class="intro-cont">nsgamliel [at] gmail [dot] com</span>) or <a class="intro-cont" href="https://www.linkedin.com/in/natan-gamliel/" target="_blank" rel="noopener noreferrer">connect with me via linkedin</a>.</p>
 		`,
 	}
 };

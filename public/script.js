@@ -73,6 +73,7 @@ const addContent = async (key) => {
 	await typePrompt(` ${content[key].full}`);
 	prompt.classList.remove('blink');
 
+	// REFACTOR
 	if (content[key].generator) {
 		chunk.innerHTML = content[key].generatorFcn(content[key].data);
 	} else {
@@ -87,6 +88,9 @@ window.onload = (event) => {
 	typeIntro();
 	document.querySelector('.intro-option.edu').addEventListener('click', () => {
 		addContent('edu');
+	});
+	document.querySelector('.intro-option.proj').addEventListener('click', () => {
+		addContent('proj');
 	});
 	document.querySelector('.intro-option.exp').addEventListener('click', () => {
 		addContent('exp');
