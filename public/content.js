@@ -16,7 +16,7 @@ const content = {
 				firm: 'Massachusetts Bay Transportation Authority',
 				start: 'April 2024',
 				end: 'Present',
-				tags: ['Project_management', 'Asana', 'Excel']
+				tags: ['Project_management', 'Asana', 'Excel', 'Python', 'Node', 'React', 'Networking']
 			},
 			{
 				title: 'Research Assistant',
@@ -81,6 +81,15 @@ const content = {
 		generator: true,
 		data: [
 			{
+				title: 'Keyboard Keyboard',
+				id: 'keyboard-keyboard',
+				img: 'keyboard-keyboard.png',
+				link: 'https://keyboard-keyboard-d35c6.web.app/',
+				code: 'https://github.com/nsgamliel/keyboard-keyboard',
+				descr: 'Virtual piano keyboard that can be played using the computer keyboard',
+				tags: ['HTML', 'JavaScript', 'CSS', 'Firebase', 'Audio']
+			},
+			{
 				title: 'Personal Website',
 				id: 'project-website',
 				img: 'personal-website.png',
@@ -88,7 +97,7 @@ const content = {
 				code: 'https://github.com/nsgamliel/personal-website',
 				descr: 'Personal website to showcase my education, experience and projects',
 				tags: ['HTML', 'JavaScript', 'CSS', 'Firebase', 'Cloudflare']
-			},
+			}
 		],
 		generatorFcn: (data) => {
 			var htmlStr = `
@@ -119,7 +128,7 @@ const content = {
 		full: 'contact',
 		generator: false,
 		chunk: `
-			<p>Feel free to reach out over email (<span class="intro-cont">nsgamliel [at] gmail [dot] com</span>) or <a class="intro-cont" href="https://www.linkedin.com/in/natan-gamliel/" target="_blank" rel="noopener noreferrer">connect with me via linkedin</a>.</p>
+			<p>Feel free to reach out over email (<span class="intro-cont">nsgamliel [at] gmail [dot] com</span>) or <a class="intro-cont" href="https://www.linkedin.com/in/natan-gamliel/" target="_blank" rel="noopener noreferrer">connect with me on LinkedIn</a>.</p>
 		`,
 	}
 };

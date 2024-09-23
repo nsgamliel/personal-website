@@ -242,4 +242,8 @@ footer {
   .proj-img {
     width: 95%;
   }
+  .proj-details {
+    max-width: 100%;
+    width: 100%;
+  }
 }
