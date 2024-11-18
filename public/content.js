@@ -80,24 +80,24 @@ const content = {
 		full: 'projects',
 		generator: true,
 		data: [
-			{
-				title: 'Keyboard Keyboard',
-				id: 'keyboard-keyboard',
-				img: 'keyboard-keyboard.png',
-				link: 'https://keyboard-keyboard-d35c6.web.app/',
-				code: 'https://github.com/nsgamliel/keyboard-keyboard',
-				descr: 'Virtual piano keyboard that can be played using the computer keyboard',
-				tags: ['HTML', 'JavaScript', 'CSS', 'Firebase', 'Audio']
-			},
-			{
-				title: 'Personal Website',
-				id: 'project-website',
-				img: 'personal-website.png',
-				link: 'https://natangamliel.com',
-				code: 'https://github.com/nsgamliel/personal-website',
-				descr: 'Personal website to showcase my education, experience and projects',
-				tags: ['HTML', 'JavaScript', 'CSS', 'Firebase', 'Cloudflare']
-			}
+			// {
+			// 	title: 'Keyboard Keyboard',
+			// 	id: 'keyboard-keyboard',
+			// 	img: 'keyboard-keyboard.png',
+			// 	link: 'https://keyboard-keyboard-d35c6.web.app/',
+			// 	code: 'https://github.com/nsgamliel/keyboard-keyboard',
+			// 	descr: 'Virtual piano keyboard that can be played using the computer keyboard',
+			// 	tags: ['HTML', 'JavaScript', 'CSS', 'Firebase', 'Audio']
+			// },
+			// {
+			// 	title: 'Personal Website',
+			// 	id: 'project-website',
+			// 	img: 'personal-website.png',
+			// 	link: 'https://natangamliel.com',
+			// 	code: 'https://github.com/nsgamliel/personal-website',
+			// 	descr: 'Personal website to showcase my education, experience and projects',
+			// 	tags: ['HTML', 'JavaScript', 'CSS', 'Firebase', 'Cloudflare']
+			// }
 		],
 		generatorFcn: (data) => {
 			var htmlStr = `
@@ -105,22 +105,25 @@ const content = {
 				<div class="proj-list">
 			`;
 			
-			data.forEach((elem) => {
-				var container = `
-					<div class="project">
-						<img class="proj-img" id="${elem.id}" src="images/${elem.img}" alt="A screenshot of ${elem.title}">
-						<div class="proj-details">
-							<p class="proj-title"><strong>${elem.title}</strong></p>
-							<p class="proj-links"><a class="proj-link" href="${elem.link}" target="_blank" rel="noopener noreferrer">[link]</a> <a class="proj-link" href="${elem.code}" target="_blank" rel="noopener noreferrer">[code]</a></p>
-							<p class="proj-descr">${elem.descr}</p>
-							<p class="proj-tags">
-				`;
-				elem.tags.forEach((tag) => {
-					container += `<span class="intro-exp">!</span>${tag} `;
-				});
-				container += '</p></div></div></div>';
-				htmlStr += container;
-			});
+			// data.forEach((elem) => {
+			// 	var container = `
+			// 		<div class="project">
+			// 			<img class="proj-img" id="${elem.id}" src="images/${elem.img}" alt="A screenshot of ${elem.title}">
+			// 			<div class="proj-details">
+			// 				<p class="proj-title"><strong>${elem.title}</strong></p>
+			// 				<p class="proj-links"><a class="proj-link" href="${elem.link}" target="_blank" rel="noopener noreferrer">[link]</a> <a class="proj-link" href="${elem.code}" target="_blank" rel="noopener noreferrer">[code]</a></p>
+			// 				<p class="proj-descr">${elem.descr}</p>
+			// 				<p class="proj-tags">
+			// 	`;
+			// 	elem.tags.forEach((tag) => {
+			// 		container += `<span class="intro-exp">!</span>${tag} `;
+			// 	});
+			// 	container += '</p></div></div></div>';
+			// 	htmlStr += container;
+			// });
+
+			htmlStr += '<p>Projects coming soon...</p>'
+
 			return htmlStr;
 		}
 	},
