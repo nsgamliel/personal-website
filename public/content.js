@@ -3,8 +3,8 @@ const content = {
 		full: 'education',
 		generator: false,
 		chunk: `
-			<p>Northwestern University | Evanston, IL</p>
-			<p>Bachelor of Science in <a href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/bachelors/#bs-in-cs" class="intro-edu" target="_blank" rel="noopener noreferrer">Computer Science</a>, McCormick School of Engineering<br>Certificate Program for Undergraduates in <a href="https://www.kellogg.northwestern.edu/programs/certificate/academics/managerial-analytics-certificate.aspx" class="intro-edu" target="_blank" rel="noopener noreferrer">Managerial Analytics</a></p>
+			<h3>Northwestern University | Evanston, IL</h3>
+			<p>Bachelor of Science in <a href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/bachelors/#bs-in-cs" class="intro-edu" target="_blank" rel="noopener noreferrer">Computer Science</a>, McCormick School of Engineering</p><p>Certificate Program for Undergraduates in <a href="https://www.kellogg.northwestern.edu/programs/certificate/academics/managerial-analytics-certificate.aspx" class="intro-edu" target="_blank" rel="noopener noreferrer">Managerial Analytics</a></p>
 		`,
 	},
 	'exp': {
@@ -12,18 +12,18 @@ const content = {
 		generator: true,
 		data: [
 			{
-				title: 'Project Coordinator',
+				title: 'Software Developer, Project Coordinator',
 				firm: 'Massachusetts Bay Transportation Authority',
 				start: 'April 2024',
 				end: 'Present',
-				tags: ['Project_management', 'Asana', 'Excel', 'Python', 'Node', 'React', 'Networking']
+				tags: ['Node.js', 'Next.js', 'TypeScript', 'Python', 'Project_management', 'Asana', 'Excel', 'Networking']
 			},
 			{
 				title: 'Research Assistant',
 				firm: 'District 65 Research Group',
 				start: 'March 2021',
 				end: 'June 2023',
-				tags: ['Python', 'Flask', 'HTML', 'CSS', 'JavaScript', 'GitHub', 'Mapbox_GL', 'Data_visualization']
+				tags: ['Python', 'Flask', 'JavaScript', 'HTML', 'CSS', 'GitHub', 'Mapbox_GL', 'Data_visualization']
 			},
 			{
 				title: 'Chief Technology Officer',
@@ -33,21 +33,21 @@ const content = {
 				tags: ['React', 'Firebase', 'GitHub', 'Project_management', 'Squarespace', 'Zapier', 'Google_Admin', 'Student_startup']
 			},
 			{
-				title: 'Intern',
+				title: 'Software Engineering Intern',
 				firm: 'Publicis Sapient',
 				start: 'June 2022',
 				end: 'August 2022',
 				tags: ['Spring_Boot', 'Java', 'REST API', 'Microsoft_Azure', 'React', 'Jira', 'Agile_methodology', 'GitHub']
 			},
 			{
-				title: 'Intern',
+				title: 'Software Engineering Intern',
 				firm: 'Robotic Perception',
 				start: 'June 2021',
 				end: 'August 2021',
 				tags: ['Computer_Vision', 'Machine_Learning', 'Jupyter_Notebook', 'Startup']
 			},
 			{
-				title: 'Software Engineer',
+				title: 'Software Developer',
 				firm: 'Scope',
 				start: 'November 2019',
 				end: 'September 2020',
@@ -57,7 +57,7 @@ const content = {
 		generatorFcn: (data) => {
 			var htmlStr = `
 				<div style="margin-bottom: 1em;">
-					<a class="intro-exp" href="pdfs/GamlielNatanResume_2024.11.pdf" target="_blank">View my full resume</a>
+					<a class="intro-exp" href="pdfs/GamlielNatanResume.pdf" target="_blank">View my full resume</a>
 				</div>
 			`;
 			
@@ -68,7 +68,7 @@ const content = {
 					<p class="exp-tags">
 				`;
 				elem.tags.forEach((tag) => {
-					container += `<span class="intro-exp">!</span>${tag} `;
+					container += `<span class="intro-exp"><strong>!</strong></span>${tag} `;
 				});
 				container += '</p></div>';
 				htmlStr += container;
@@ -79,50 +79,144 @@ const content = {
 	'proj': {
 		full: 'projects',
 		generator: true,
-		data: [
-			// {
-			// 	title: 'Keyboard Keyboard',
-			// 	id: 'keyboard-keyboard',
-			// 	img: 'keyboard-keyboard.png',
-			// 	link: 'https://keyboard-keyboard-d35c6.web.app/',
-			// 	code: 'https://github.com/nsgamliel/keyboard-keyboard',
-			// 	descr: 'Virtual piano keyboard that can be played using the computer keyboard',
-			// 	tags: ['HTML', 'JavaScript', 'CSS', 'Firebase', 'Audio']
-			// },
-			// {
-			// 	title: 'Personal Website',
-			// 	id: 'project-website',
-			// 	img: 'personal-website.png',
-			// 	link: 'https://natangamliel.com',
-			// 	code: 'https://github.com/nsgamliel/personal-website',
-			// 	descr: 'Personal website to showcase my education, experience and projects',
-			// 	tags: ['HTML', 'JavaScript', 'CSS', 'Firebase', 'Cloudflare']
-			// }
-		],
+		data: {
+			prog: [
+				{
+					img: "amm.png",
+					alt: "Screenshot of March Madness App",
+					title: "March Madness App",
+					descr: "Full stack app that tracks live score updates from the NCAA March Madness tournament and tracks bracket scores based on custom rules.",
+					links: [
+						{
+							url: "https://www.albaniancontestofchampions.us/",
+							text: "[Website]"
+						},
+						{
+							url: "https://github.com/nsgamliel/amm-client",
+							text: "[Client Code]"
+						},
+						{
+							url: "https://github.com/nsgamliel/mm-scores",
+							text: "[Server Code]"
+						}
+					],
+					tags: ["Next.js", "TypeScript", "Node.js", "REST API", "POSTGRESQL", "Tailwind"]
+				},
+				{
+					img: "chess.png",
+					alt: "Screenshot of Chess App",
+					title: "Chess",
+					descr: "Chess app that enables real-time games of chess over the Internet.",
+					links: [
+						{
+							url: "https://chess.natangamliel.com/",
+							text: "[Website]"
+						},
+						{
+							url: "https://github.com/nsgamliel/chess-io-client",
+							text: "[Client Code]"
+						},
+						{
+							url: "https://github.com/nsgamliel/chess-io-server",
+							text: "[Server Code]"
+						}
+					],
+					tags: ["Websockets", "JavaScript"]
+				}
+			],
+			prev: [
+				{
+					img: "keyboard-keyboard.png",
+					alt: "Screenshot of Keyboard Keyboard Website",
+					title: "[Demo] Keyboard-Keyboard",
+					descr: "Mini piano keyboard that can be played from a computer keyboard.",
+					links: [
+						{
+							url: "https://keyboard.natangamliel.com/",
+							text: "[Website]"
+						},
+						{
+							url: "https://github.com/nsgamliel/keyboard-keyboard",
+							text: "[Code]"
+						}
+					],
+					tags: ["JavaScript", "HTML Canvas", "Audio"]
+				},
+				{
+					img: "compiler.png",
+					alt: "Northwestern University Computer Science Logo",
+					title: "[Coursework] C Compiler",
+					descr: 'Compiler that transforms a C-like language to assembly, developed as part of the <a class="proj-link" href="https://users.cs.northwestern.edu/~simonec/CC.html" target="_blank" rel="noopener noreferrer">CS 322: Compiler Construction</a> course at Northwestern University.',
+					links: [
+						{
+							url: "https://github.com/nsgamliel/compiler-construction",
+							text: "[Code]"
+						}
+					],
+					tags: ["C++", "Design_Patterns"]
+				}
+			]
+		},
 		generatorFcn: (data) => {
 			var htmlStr = `
 				<p>View all project code on my <a class="intro-cont" href="https://github.com/nsgamliel" target="_blank" rel="noopener noreferrer">GitHub profile</a></p>
-				<div class="proj-list">
+				<h2>In Progress</h2>
+				<p>Note: Availability of hosted projects is dependent on server resources which spin down after periods of inactivity.</p>
 			`;
 			
-			// data.forEach((elem) => {
-			// 	var container = `
-			// 		<div class="project">
-			// 			<img class="proj-img" id="${elem.id}" src="images/${elem.img}" alt="A screenshot of ${elem.title}">
-			// 			<div class="proj-details">
-			// 				<p class="proj-title"><strong>${elem.title}</strong></p>
-			// 				<p class="proj-links"><a class="proj-link" href="${elem.link}" target="_blank" rel="noopener noreferrer">[link]</a> <a class="proj-link" href="${elem.code}" target="_blank" rel="noopener noreferrer">[code]</a></p>
-			// 				<p class="proj-descr">${elem.descr}</p>
-			// 				<p class="proj-tags">
-			// 	`;
-			// 	elem.tags.forEach((tag) => {
-			// 		container += `<span class="intro-exp">!</span>${tag} `;
-			// 	});
-			// 	container += '</p></div></div></div>';
-			// 	htmlStr += container;
-			// });
+			data.prog.forEach((elem) => {
+				var container = `
+					<div class="proj-item">
+						<div class="proj-img-container">
+							<img class="proj-img" src="images/${elem.img}" alt="${elem.alt}">
+						</div>
+						<div class="proj-spacer"></div>
+						<div class="proj-details">
+							<h3 class="proj-title">${elem.title}</h3>
+							<p class="proj-descr">${elem.descr}</p>
+							<p class="proj-links">
+				`;
 
-			htmlStr += '<p>Projects coming soon...</p>'
+				elem.links.forEach((link) => {
+					container += `<a class="proj-link" href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}</a> `;
+				});
+
+				container += '</p><p class="proj-tags">';
+
+				elem.tags.forEach((tag) => {
+					container += `<span class="proj-tag">!</span>${tag} `;
+				});
+				container += '</p></div></div>';
+				htmlStr += container;
+			});
+
+			htmlStr += '<h2>Previous</h2>';
+
+			data.prev.forEach((elem) => {
+				var container = `
+					<div class="proj-item">
+						<div class="proj-img-container">
+							<img class="proj-img" src="images/${elem.img}" alt="${elem.alt}">
+						</div>
+						<div class="proj-spacer"></div>
+						<div class="proj-details">
+							<h3 class="proj-title">${elem.title}</h3>
+							<p class="proj-descr">${elem.descr}</p>
+							<p class="proj-links">
+				`;
+
+				elem.links.forEach((link) => {
+					container += `<a class="proj-link" href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}</a> `;
+				});
+
+				container += '</p><p class="proj-tags">';
+
+				elem.tags.forEach((tag) => {
+					container += `<span class="proj-tag">!</span>${tag} `;
+				});
+				container += '</p></div></div>';
+				htmlStr += container;
+			});
 
 			return htmlStr;
 		}

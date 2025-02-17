@@ -70,3 +70,7 @@ node_modules/
 TODO.txt
 
 public/pdfs
+
+.DS_Store
+public/.DS_Store
+public/images/.DS_Store

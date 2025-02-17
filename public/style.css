@@ -1,6 +1,6 @@
 :root {
   --color-dark: rgb(30,30,30);
-  --color-accent: #0ff;
+  --color-accent: rgb(119, 255, 255);
 }
 
 body {
@@ -116,7 +116,7 @@ a.intro-exp:hover {
   color: #000;
 }
 
-.option-clicked {
+.option-clicked, .option-clicked:hover {
   background-color: #fff;
   color: #000;
 }
@@ -166,7 +166,7 @@ a.intro-exp:hover {
   border-left: 3px solid #fff;
 }
 
-.project {
+/* .project {
   display: flex;
   margin-bottom: 10px;
   min-height: 25vh;
@@ -216,6 +216,62 @@ a.proj-link:hover {
   color: #000;
   background-color: var(--color-accent);
   transition: 0.3s;
+} */
+
+.proj-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  z-index: 0;
+  margin-top: 30px;
+}
+
+.proj-item * {
+  z-index: 1;
+}
+
+.proj-spacer {
+  width: 20px;
+  height: 0;
+}
+
+.proj-img-container {
+  width: 35%;
+}
+
+.proj-img {
+  border-left: 3px solid #fff;
+  width: 100%;
+  height: auto;
+}
+
+.proj-details {
+  width: calc(65% - 20px);
+}
+
+.proj-title {
+  margin-top: 0;
+}
+
+.proj-link {
+  color: var(--color-accent);
+  border-radius: 2px;
+  margin: 0;
+}
+
+a.proj-link {
+  text-decoration: none;
+}
+
+a.proj-link:hover {
+  color: #000;
+  background-color: var(--color-accent);
+  transition: 0.3s;
+}
+
+.proj-tag {
+  font-weight: bold;
+  color: var(--color-accent);
 }
 
 
@@ -235,7 +291,7 @@ footer {
     max-width: 200px;
     margin: 0;
   }
-  .project {
+  /* .project {
     flex-direction: column;
     align-items: center;
   }
@@ -244,6 +300,16 @@ footer {
   }
   .proj-details {
     max-width: 100%;
+    width: 100%;
+  } */
+  .proj-item {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .proj-img-container {
+    width: 90%;
+  }
+  .proj-details {
     width: 100%;
   }
 }
