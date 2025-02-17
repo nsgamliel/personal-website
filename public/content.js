@@ -160,8 +160,8 @@ const content = {
 		generatorFcn: (data) => {
 			var htmlStr = `
 				<p>View all project code on my <a class="intro-cont" href="https://github.com/nsgamliel" target="_blank" rel="noopener noreferrer">GitHub profile</a></p>
-				<h2>In Progress</h2>
 				<p>Note: Availability of hosted projects is dependent on server resources which spin down after periods of inactivity.</p>
+				<h2>In Progress</h2>
 			`;
 			
 			data.prog.forEach((elem) => {
