@@ -12,10 +12,17 @@ const content = {
 		generator: true,
 		data: [
 			{
+				title: 'Solution Developer',
+				firm: 'System Automation',
+				start: 'April 2025',
+				end: 'Present',
+				tags: ['TypeScript', 'Microsoft Azure', 'REST API', 'Technical Design']
+			},
+			{
 				title: 'Software Developer, Project Coordinator',
 				firm: 'Massachusetts Bay Transportation Authority',
 				start: 'April 2024',
-				end: 'Present',
+				end: 'April 2025',
 				tags: ['Node.js', 'Next.js', 'TypeScript', 'Python', 'Project_management', 'Asana', 'Excel', 'Networking']
 			},
 			{
