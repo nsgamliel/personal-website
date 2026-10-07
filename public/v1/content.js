@@ -64,7 +64,7 @@ const content = {
 		generatorFcn: (data) => {
 			var htmlStr = `
 				<div style="margin-bottom: 1em;">
-					<a class="intro-exp" href="pdfs/GamlielNatanResume.pdf" target="_blank">View my full resume</a>
+					<a class="intro-exp" href="/assets/GamlielNatanResume.pdf" target="_blank">View my full resume</a>
 				</div>
 			`;
 			
@@ -148,19 +148,6 @@ const content = {
 						}
 					],
 					tags: ["JavaScript", "HTML Canvas", "Audio"]
-				},
-				{
-					img: "compiler.png",
-					alt: "Northwestern University Computer Science Logo",
-					title: "[Coursework] C Compiler",
-					descr: 'Compiler that transforms a C-like language to assembly, developed as part of the <a class="proj-link" href="https://users.cs.northwestern.edu/~simonec/CC.html" target="_blank" rel="noopener noreferrer">CS 322: Compiler Construction</a> course at Northwestern University.',
-					links: [
-						{
-							url: "https://github.com/nsgamliel/compiler-construction",
-							text: "[Code]"
-						}
-					],
-					tags: ["C++", "Design_Patterns"]
 				}
 			]
 		},
